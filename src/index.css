@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-dark: #0B5D34;
+  --color-brand-medium: #0F733C;
+  --color-brand-light: #16A34A;
+  --color-brand-accent: #22C55E;
+  --color-brand-cream: #F4F6F4;
+  --color-brand-mint: #ECFDF5;
+
+  --animate-fade-in-up: fade-in-up 0.5s ease-out forwards;
+  --animate-pulse-subtle: pulse-subtle 2s infinite ease-in-out;
+  --animate-float: float 4s ease-in-out infinite;
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse-subtle {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+}
+
+/* Custom base layer styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Custom styling for Swiper navigation and pagination to match premium brand */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #0B5D34 !important;
+  background: white;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #0B5D34;
+  color: white !important;
+  transform: scale(1.05);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+
+.swiper-pagination-bullet-active {
+  background: #0B5D34 !important;
+  width: 24px !important;
+  border-radius: 4px !important;
+}
+
+/* Glassmorphism style helper */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.glass-panel-dark {
+  background: rgba(11, 93, 52, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Utility to ensure standard root container */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
