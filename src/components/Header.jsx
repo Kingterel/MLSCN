@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, GraduationCap, Shield } from 'lucide-react';
+import { Menu, X, GraduationCap } from 'lucide-react';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,9 +41,13 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo Section */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="relative flex items-center justify-center w-12 h-12 bg-brand-dark rounded-xl shadow-md overflow-hidden group-hover:scale-105 transition-transform duration-300">
-              <Shield className="w-7 h-7 text-white" />
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/20"></div>
+            <div className="relative flex items-center justify-center w-12 h-12 bg-white rounded-xl shadow-sm overflow-hidden group-hover:scale-105 transition-transform duration-300 border border-slate-100">
+              <img 
+                src="/assets/images/logo.jpeg" 
+                alt="Mount La Salle College Naka Badge" 
+                className="w-full h-full object-contain p-1"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none"></div>
             </div>
             <div className="flex flex-col">
               <span className="font-extrabold text-lg sm:text-xl tracking-tight text-brand-dark leading-tight font-heading">
