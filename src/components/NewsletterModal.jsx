@@ -15,7 +15,7 @@ export default function NewsletterModal({ isOpen, onClose, newsletter }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in-up">
       <div className="bg-white rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden shadow-2xl flex flex-col border border-slate-100">
-        
+
         {/* Modal Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 bg-slate-50">
           <div className="flex items-center gap-3">
@@ -36,14 +36,13 @@ export default function NewsletterModal({ isOpen, onClose, newsletter }) {
         </div>
 
         {/* Modal Content - Document Reader Mockup */}
-        <div className="flex-1 overflow-y-auto p-6 md:p-10 bg-slate-100/50 flex justify-center">
-          <div className="bg-white w-full max-w-2xl shadow-lg border border-slate-250/65 rounded-xl p-8 md:p-12 relative font-sans text-slate-700 min-h-[600px] flex flex-col justify-between">
-            {/* Document Header Mock */}
+        <div className="flex-1 overflow-y-auto overflow-x-hidden p-6 md:p-10 bg-slate-100/50 flex flex-col justify-center">
+          <div className="bg-white w-full max-w-full mx-0 shadow-lg border border-slate-250/65 rounded-xl p-8 md:p-12 relative font-sans text-slate-700 min-h-full flex flex-col justify-between break-words">
             <div>
               <div className="flex items-center justify-between border-b-2 border-brand-dark pb-6 mb-8">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-brand-dark text-white rounded-xl flex items-center justify-center font-bold">
-                    LS
+                  <div className="w-12 h-12 rounded-xl overflow-hidden">
+                    <img src="/assets/images/logo.jpeg" alt="MLSCN Logo" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <h2 className="font-extrabold text-brand-dark text-lg leading-tight font-heading">MOUNT LA SALLE</h2>
@@ -62,12 +61,12 @@ export default function NewsletterModal({ isOpen, onClose, newsletter }) {
               <h1 className="text-2xl font-bold text-slate-800 font-heading mb-4 text-center">
                 {newsletter.headline || 'Quarterly Academic & Community Updates'}
               </h1>
-              
+
               <div className="space-y-6 text-sm leading-relaxed text-slate-600">
-                <p className="italic font-medium text-slate-500 border-l-4 border-brand-light pl-4 mb-6">
+                <p className="italic font-medium text-slate-500 pl-4 mb-6">
                   "Excellence in Learning & Character" — Dear Parents, Guardians, and Friends of MLSCN, welcome to this edition of our newsletter. We share major accomplishments, upcoming academic timelines, and updates from the Naka campus community.
                 </p>
-                
+
                 <div>
                   <h4 className="font-bold text-slate-800 font-heading mb-2 text-sm uppercase tracking-wider text-brand-dark">1. Academic Progress & Curriculum</h4>
                   <p>

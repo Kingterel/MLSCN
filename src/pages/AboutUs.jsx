@@ -25,21 +25,59 @@ export default function AboutUs() {
   ];
 
   const milestones = [
-    { year: "1994", event: "Mount La Salle College Naka was founded by the De La Salle Brothers to bring high-quality education to Benue State." },
+    { year: "1982", event: "Mount La Salle College Naka was founded by the De La Salle Brothers to bring high-quality education to Benue State." },
     { year: "2004", event: "Completed construction of the senior science block and expanded laboratory facilities to support STEM excellence." },
     { year: "2014", event: "Celebrated 20 years of academic distinction and introduced digital computer labs into the junior high curriculum." },
     { year: "2024", event: "Launched the multi-purpose events sports complex and achieved 100% pass rate in national senior school certificate examinations." }
   ];
 
+    const management = [
+    {
+      name: "John Doe",
+      role: "Principal",
+      bio: "Oversees school operations and academic excellence.",
+      img: "/assets/images/manager1.jpeg"
+    },
+    {
+      name: "Jane Smith",
+      role: "Vice Principal",
+      bio: "Supports curriculum development and student affairs.",
+      img: "/assets/images/manager2.jpeg"
+    },
+    {
+      name: "Michael Brown",
+      role: "Head of Admissions",
+      bio: "Manages student recruitment and enrollment processes.",
+      img: "/assets/images/manager3.jpeg"
+    },
+    {
+      name: "Emily Davis",
+      role: "Director of Sports",
+      bio: "Leads sports programs and facilities management.",
+      img: "/assets/images/manager4.jpeg"
+    },
+    {
+      name: "Samuel Lee",
+      role: "Head of IT",
+      bio: "Oversees technology integration and support.",
+      img: "/assets/images/manager5.jpeg"
+    },
+    {
+      name: "Olivia Patel",
+      role: "Finance Officer",
+      bio: "Manages budgeting, finance, and resource allocation.",
+      img: "/assets/images/manager6.jpeg"
+    },
+  ];
   return (
     <div className="flex-1 bg-slate-50 font-sans py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        
+
         {/* Page Banner Header */}
         <div className="bg-brand-dark rounded-3xl text-white py-16 px-8 relative overflow-hidden shadow-xl text-center">
           <div className="absolute inset-0 bg-gradient-to-tr from-brand-dark via-brand-dark/95 to-brand-light/80 opacity-90"></div>
           <div className="absolute -right-24 -top-24 w-80 h-80 rounded-full bg-brand-accent/20 blur-3xl"></div>
-          
+
           <div className="relative z-10 space-y-4 max-w-3xl mx-auto">
             <span className="text-brand-accent text-xs font-bold tracking-widest uppercase bg-white/10 px-3.5 py-1 rounded-full">
               Who We Are
@@ -55,14 +93,14 @@ export default function AboutUs() {
 
         {/* 1. HISTORY & PRINCIPAL'S WELCOME */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-white rounded-3xl p-8 md:p-12 border border-slate-100 shadow-sm">
-          
+
           {/* Principal Image & Label (Left Column) */}
           <div className="lg:col-span-5 space-y-4 text-center lg:text-left">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-lg max-w-sm mx-auto bg-slate-100 border border-slate-200">
-              <img 
-                src="/assets/images/image2.jpeg" 
-                alt="Rev. Brother Principal" 
-                className="w-full h-full object-cover" 
+              <img
+                src="/assets/images/image2.jpeg"
+                alt="Rev. Brother Principal"
+                className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
               <div className="absolute bottom-4 left-4 right-4 text-white text-left">
@@ -79,7 +117,7 @@ export default function AboutUs() {
               Welcome from our Director
             </h2>
             <div className="w-12 h-1 bg-brand-light rounded-full"></div>
-            
+
             <div className="space-y-4 text-slate-650 text-sm leading-relaxed">
               <p className="font-medium text-slate-700 italic">
                 "Dear Prospective Students, Parents, and Guardians,"
@@ -94,7 +132,7 @@ export default function AboutUs() {
                 We look forward to partnering with you to nurture the next generation of outstanding scholars and visionary leaders.
               </p>
             </div>
-            
+
             <div className="pt-4 border-t border-slate-150/70 flex items-center gap-4">
               <div className="font-cursive text-brand-dark opacity-60 text-xl font-semibold">La Salle Naka</div>
               <div>
@@ -177,7 +215,7 @@ export default function AboutUs() {
                 <div className="absolute -left-3.5 top-1.5 w-7 h-7 rounded-full bg-brand-dark text-white text-[10px] font-bold flex items-center justify-center shadow-md border-4 border-slate-50">
                   {idx + 1}
                 </div>
-                
+
                 {/* Content */}
                 <div className="space-y-1 bg-slate-50 hover:bg-brand-mint/20 p-5 rounded-2xl border border-slate-100 transition-colors">
                   <span className="inline-block px-2.5 py-0.5 bg-brand-dark text-white text-xs font-bold rounded-full">
@@ -191,6 +229,20 @@ export default function AboutUs() {
             ))}
           </div>
         </div>
+            {/* Management Team */}
+            <div className="mt-12">
+              <h2 className="text-2xl font-bold text-slate-800 mb-6">Management Team</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {management.map((member, idx) => (
+                  <div key={idx} className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                    <img src={member.img} alt={member.name} className="w-full h-48 object-cover rounded-md mb-4" />
+                    <h3 className="text-lg font-bold text-slate-800">{member.name}</h3>
+                    <p className="text-sm text-brand-dark font-medium">{member.role}</p>
+                    <p className="mt-2 text-sm text-slate-600">{member.bio}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
 
       </div>
     </div>
